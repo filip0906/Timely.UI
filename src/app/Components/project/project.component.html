@@ -1,0 +1,18 @@
+<div *ngIf="project">
+  <h2>{{ project.name }}</h2>
+  <div>
+    First Name:
+    <input [(ngModel)]="project.name" placeholder="" />
+  </div>
+  <div>
+    Start date:
+    <input type="datetime-local" [(ngModel)]="project.startDate"/>
+  </div>
+  <div>
+    Finish date:
+    <input type="datetime-local" [(ngModel)]="project.endDate"/>
+  </div>
+  <button (click)="updateProject(project)" *ngIf="project.id">Save</button>
+  <button (click)="deleteProject(project)" *ngIf="project.id">Delete</button>
+  <button (click)="createProject(project)" *ngIf="!project.id">Create</button>
+</div>
